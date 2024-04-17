@@ -18,6 +18,7 @@ const DesignTitle = () => {
 
   const handleInputChange = (name: string) => {
     setState({ ...state, name: name, width: spanRef.current?.clientWidth! })
+    console.log("-------  title scence")
     setCurrentDesign({ ...currentDesign, name })
   }
 

@@ -32,9 +32,15 @@ const Navbar = () => {
 
   const parseGraphicJSON = () => {
     const currentScene = editor.scene.exportToJSON()
-
+    console.log("--------- ", scenes)
+    console.log("--------- ", currentScene)
     const updatedScenes = scenes.map((scn) => {
       if (scn.id === currentScene.id) {
+        console.log("--------- 1", {
+          id: currentScene.id,
+          layers: currentScene.layers,
+          name: currentScene.name,
+        })
         return {
           id: currentScene.id,
           layers: currentScene.layers,
@@ -58,6 +64,7 @@ const Navbar = () => {
         metadata: {},
         preview: "",
       }
+      console.log("---------3", graphicTemplate)
       makeDownload(graphicTemplate)
     } else {
       console.log("NO CURRENT DESIGN")
@@ -232,6 +239,7 @@ const Navbar = () => {
       //   @ts-ignore
       setScenes(template.scenes)
       //   @ts-ignore
+      console.log("-------  import scence")
       setCurrentDesign(template.design)
     },
     [editor]

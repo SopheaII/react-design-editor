@@ -195,6 +195,7 @@ const ResizeTemplate = () => {
         width: parseInt(size.width),
         height: parseInt(size.height),
       })
+      console.log("-------  resize scence")
       setCurrentDesign({
         ...currentDesign,
         frame: {

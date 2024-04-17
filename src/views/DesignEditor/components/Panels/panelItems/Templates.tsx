@@ -50,6 +50,7 @@ export default function () {
         const loadedDesign = await loadGraphicTemplate(design)
         setScenes(loadedDesign.scenes)
         setCurrentScene(loadedDesign.scenes[0])
+        console.log("-------  Template setScenes setCurrentScene")
         setCurrentDesign(loadedDesign.design)
       }
     },

@@ -53,6 +53,7 @@ const Timeline = () => {
           .importFromJSON(defaultTemplate)
           .then(() => {
             // SET INITIAL DURATION
+            console.log("-------  video scence")
             setCurrentDesign({
               id: nanoid(),
               frame: defaultTemplate.frame,
@@ -66,6 +67,7 @@ const Timeline = () => {
             editor.renderer.render(initialDesign).then((data) => {
               setCurrentScene({ ...initialDesign, preview: data, duration: 5000 })
               setScenes([{ ...initialDesign, preview: data, duration: 5000 }])
+              console.log("-------  video scence setCurrentScene")
             })
           })
           .catch(console.log)
@@ -108,6 +110,7 @@ const Timeline = () => {
     } as any
     const newPages = [...updatedPages, newPage] as any[]
     setScenes(newPages)
+    console.log("-------  Timeline setScenes")
     setTime(maxTime)
   }, [scenes, currentDesign])
 
@@ -126,6 +129,7 @@ const Timeline = () => {
         }) as any[]
         setScenes(updatedPages)
         setCurrentScene(page)
+        console.log("-------  Timeline setScenes setCurrentScene")
       }
     },
     [editor, scenes, currentScene]

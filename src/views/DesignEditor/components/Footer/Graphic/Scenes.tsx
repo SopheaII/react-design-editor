@@ -39,6 +39,7 @@ const Scenes = () => {
       const isCurrentSceneLoaded = scenes.find((s) => s.id === currentScene?.id)
       if (!isCurrentSceneLoaded) {
         setCurrentScene(scenes[0])
+        console.log("-------  Scenes setCurrentScene")
       }
     }
   }, [editor, scenes, currentScene])
@@ -61,6 +62,7 @@ const Scenes = () => {
 
   React.useEffect(() => {
     if (editor) {
+      console.log("-------  Scenes setScenes1", currentScene)
       if (currentScene) {
         updateCurrentScene(currentScene)
       } else {
@@ -84,6 +86,7 @@ const Scenes = () => {
             editor.renderer.render(initialDesign).then((data) => {
               setCurrentScene({ ...initialDesign, preview: data })
               setScenes([{ ...initialDesign, preview: data }])
+              console.log("-------  Scenes setScenes2 setCurrentScene")
             })
           })
           .catch(console.log)
@@ -118,6 +121,7 @@ const Scenes = () => {
     const newPages = [...updatedPages, newPage] as any[]
     setScenes(newPages)
     setCurrentScene(newPage)
+    console.log("-------  Scenes setScenes3 setCurrentScene")
   }, [scenes, currentDesign])
 
   const changePage = React.useCallback(
@@ -136,6 +140,7 @@ const Scenes = () => {
 
         setScenes(updatedPages)
         setCurrentScene(page)
+        console.log("-------  Scenes setScenes4 setCurrentScene", scenes.length)
       }
     },
     [editor, scenes, currentScene]
@@ -158,6 +163,7 @@ const Scenes = () => {
 
         return arrayMove(items, oldIndex, newIndex)
       })
+      console.log("-------  Scenes setScenes5")
     }
     setDraggedScene(null)
   }

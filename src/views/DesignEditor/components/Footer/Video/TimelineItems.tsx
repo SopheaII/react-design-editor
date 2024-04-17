@@ -36,6 +36,7 @@ const TimelineItems = () => {
       })
 
       setScenes(updatedItems)
+      console.log("-------  Video setScenes")
     },
     [scenes]
   )
@@ -57,6 +58,7 @@ const TimelineItems = () => {
 
         return arrayMove(items, oldIndex, newIndex)
       })
+      console.log("-------  Video setScenes")
     }
     setDraggedScene(null)
   }
@@ -77,6 +79,7 @@ const TimelineItems = () => {
         }
       })
       setScenes(updatedScenes)
+      console.log("-------  Video setScenes")
       setCurrentPreview(updatedPreview)
     }
     if (editor) {

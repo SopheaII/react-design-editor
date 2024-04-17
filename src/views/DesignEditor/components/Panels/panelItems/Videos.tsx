@@ -90,6 +90,7 @@ const Videos = () => {
           return scn
         })
         setScenes(updatedScenes)
+        console.log("-------  Video setScenes")
       }
     },
     [editor, scenes, currentScene]

@@ -84,6 +84,7 @@ const Scenes = () => {
             editor.renderer.render(initialDesign).then((data) => {
               setCurrentScene({ ...initialDesign, preview: data })
               setScenes([{ ...initialDesign, preview: data }])
+              console.log("-------  sdfsdf setScenes setCurrentScene")
             })
           })
           .catch(console.log)
@@ -118,6 +119,7 @@ const Scenes = () => {
     const newPages = [...updatedPages, newPage] as any[]
     setScenes(newPages)
     setCurrentScene(newPage)
+    console.log("-------  sdfsdf setScenes setCurrentScene")
   }, [scenes, currentDesign])
 
   const changePage = React.useCallback(
@@ -135,6 +137,7 @@ const Scenes = () => {
         }) as any[]
 
         setScenes(updatedPages)
+        console.log("-------  sdfsdf setScenes")
         setCurrentScene(page)
       }
     },
@@ -158,6 +161,7 @@ const Scenes = () => {
 
         return arrayMove(items, oldIndex, newIndex)
       })
+      console.log("-------  sdfsdf setScenes")
     }
     setDraggedScene(null)
   }

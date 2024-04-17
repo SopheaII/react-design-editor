@@ -52,7 +52,9 @@ const SceneContextMenu = () => {
       const initialDesign = editor.scene.exportToJSON() as any
       const preview = await editor.renderer.render(initialDesign)
       setCurrentScene({ ...initialDesign, preview: preview, duration: 5000 })
+      console.log("-------  Scenes setCurrentScene")
       setScenes([{ ...initialDesign, preview: preview, duration: 5000 }])
+      console.log("-------  graphic setScenes")
     }
   }
 
@@ -63,6 +65,7 @@ const SceneContextMenu = () => {
     const updatedScenes = [...scenes, { ...currentScene, id: nanoid() }]
     //  @ts-ignore
     setScenes(updatedScenes)
+    console.log("-------  graphic setScenes")
     setContextMenuTimelineRequest({ ...contextMenuTimelineRequest, visible: false })
   }
   console.log({ contextMenuTimelineRequest })

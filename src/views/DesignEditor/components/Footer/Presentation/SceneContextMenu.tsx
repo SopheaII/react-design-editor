@@ -53,6 +53,7 @@ const SceneContextMenu = () => {
       const preview = await editor.renderer.render(initialDesign)
       setCurrentScene({ ...initialDesign, preview, duration: 5000 })
       setScenes([{ ...initialDesign, preview, duration: 5000 }])
+      console.log("-------  Footer setScenes1 setCurrentScene")
     }
   }
 
@@ -63,6 +64,7 @@ const SceneContextMenu = () => {
     const updatedScenes = [...scenes, { ...currentScene, id: nanoid() }]
     //  @ts-ignore
     setScenes(updatedScenes)
+    console.log("-------  Footer setScenes2")
     setContextMenuTimelineRequest({ ...contextMenuTimelineRequest, visible: false })
   }
 

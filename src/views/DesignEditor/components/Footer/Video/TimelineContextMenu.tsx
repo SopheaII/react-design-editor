@@ -42,6 +42,7 @@ const TimelineContextMenu = () => {
     setContextMenuTimelineRequest({ ...contextMenuTimelineRequest, visible: false })
     if (updatedScenes[0]) {
       setScenes(updatedScenes)
+      console.log("-------  Timeline setScenes")
     } else {
       const defaultTemplate = getDefaultTemplate({
         width: frame.width,
@@ -62,6 +63,7 @@ const TimelineContextMenu = () => {
       const preview = await editor.renderer.render(initialDesign)
       setCurrentScene({ ...initialDesign, preview: preview, duration: 5000 })
       setScenes([{ ...initialDesign, preview: preview, duration: 5000 }])
+      console.log("-------  Timeline setScenes setCurrentScene")
     }
   }
 
@@ -72,6 +74,7 @@ const TimelineContextMenu = () => {
     const updatedScenes = [...scenes, { ...currentScene, id: nanoid() }]
     //  @ts-ignore
     setScenes(updatedScenes)
+    console.log("-------  Timeline setScenes")
     setContextMenuTimelineRequest({ ...contextMenuTimelineRequest, visible: false })
   }
 
